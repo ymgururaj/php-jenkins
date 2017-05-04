@@ -23,7 +23,7 @@
          description="Performs a lint check and runs the tests (without generating code coverage reports)"/>
 
  <target name="static-analysis"
-         depends="lint,phploc-ci,pdepend,phpmd-ci,phpcs-ci,phpcpd-ci"
+         depends="lint,phploc-ci,pdepend,phpmd-ci,phpcpd-ci"
          description="Performs static analysis" />
 
  <!-- Adjust the threadCount attribute's value to the number of CPUs -->
@@ -36,7 +36,6 @@
    </sequential>
    <antcall target="lint"/>
    <antcall target="phpcpd-ci"/>
-   <antcall target="phpcs-ci"/>
    <antcall target="phploc-ci"/>
   </parallel>
  </target>
@@ -205,7 +204,7 @@
 
  <target name="phpdox"
          unless="phpdox.done"
-         depends="phploc-ci,phpcs-ci,phpmd-ci"
+         depends="phploc-ci,phpmd-ci"
          description="Generate project documentation using phpDox">
   <exec executable="${phpdox}" taskname="phpdox">
    <arg value="--file"/>
