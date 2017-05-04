@@ -154,22 +154,6 @@
   <property name="phpcs.done" value="true"/>
  </target>
 
- <target name="phpcs-ci"
-         unless="phpcs.done"
-         depends="prepare"
-         description="Find coding standard violations using PHP_CodeSniffer and log result in XML format. Intended for usage within a continuous integration environment.">
-  <exec executable="${phpcs}" output="/dev/null" taskname="phpcs">
-   <arg value="--report=checkstyle" />
-   <arg value="--report-file=${basedir}/build/logs/checkstyle.xml" />
-   <arg value="--standard=PSR2" />
-   <arg value="--extensions=php" />
-   <arg value="--ignore=autoload.php" />
-   <arg path="${basedir}/src" />
-   <arg path="${basedir}/tests" />
-  </exec>
-
-  <property name="phpcs.done" value="true"/>
- </target>
 
  <target name="phpcpd"
          unless="phpcpd.done"
