@@ -1,10 +1,10 @@
 <?php
 
-class HelloTest extends Silex\WebTestCase
+class HelloTest 
 {
     public function createApplication()
     {
-        return require __DIR__ . "/../src/app.php";
+        return require __DIR__ . "/../src/index.php";
     }
     
     public function testHelloNameExample()
