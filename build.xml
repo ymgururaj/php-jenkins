@@ -178,7 +178,7 @@
  </target>
 
  <target name="phpunit-ci"
-         unless="phpunit.done"
+         
          depends="prepare"
          description="Run unit tests with PHPUnit">
   <exec executable="${phpunit}" returnProperty="result.phpunit" taskname="phpunit">
@@ -190,7 +190,7 @@
  </target>
 
  <target name="phpunit"
-         unless="phpunit.done"
+        
          depends="prepare"
          description="Run unit tests with PHPUnit (without generating code coverage reports)">
   <exec executable="${phpunit}" taskname="phpunit">
